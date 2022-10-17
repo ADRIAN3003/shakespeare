@@ -16,5 +16,10 @@ namespace shakespeare
         {
             InitializeComponent();
         }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+
+        }
     }
 }
