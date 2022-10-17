@@ -84,7 +84,7 @@ namespace shakespeare
             //}
             //return !nincs;
 
-            return shakespeares.Count(x => x.Komedia) == 0;
+            return shakespeares.Count(x => x.Komedia) != 0;
         }
 
         private void btnKereses_Click(object sender, EventArgs e)
