@@ -18,6 +18,8 @@ namespace shakespeare
         public Form1()
         {
             InitializeComponent();
+            lblTalalat.Text = "";
+            lblUtolsoMuve.Text = "";
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -51,7 +53,31 @@ namespace shakespeare
                 }
             }
 
-            MessageBox.Show("Nem komédiák kiírva fájlba!");
+            MessageBox.Show("tragédiák és királydrámák angol címét kiírtam a dramak.txt-be");
+        }
+
+        private void btnKereses_Click(object sender, EventArgs e)
+        {
+            bool van = false;
+            foreach (var shakespeare in shakespeares)
+            {
+                if (!van && shakespeare.Ev == Convert.ToInt32(tbEvSzam.Text))
+                {
+                    van = true;
+                    lblTalalat.Text = shakespeare.MagyarCim + "\n" + shakespeare.AngolCim + "\n" + (shakespeare.Komedia ? "Komédia" : "Dráma");
+                }
+            }
+
+            if (!van)
+            {
+                lblTalalat.Text = "Nem találtam megfelelő drámát";
+                MessageBox.Show("Nem találtam megfelelő drámát");
+            }
+        }
+
+        private void btnUtolsoMuve_Click(object sender, EventArgs e)
+        {
+            lblUtolsoMuve.Text = shakespeares.OrderBy(x => x.Ev).Last().AngolCim;
         }
     }
 }

@@ -31,9 +31,13 @@ namespace shakespeare
         {
             this.lblDarab = new System.Windows.Forms.Label();
             this.btnUtolsoMuve = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblUtolsoMuve = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNemKomediak = new System.Windows.Forms.Button();
+            this.tbEvSzam = new System.Windows.Forms.TextBox();
+            this.lblEvSzam = new System.Windows.Forms.Label();
+            this.btnKereses = new System.Windows.Forms.Button();
+            this.lblTalalat = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,15 +58,16 @@ namespace shakespeare
             this.btnUtolsoMuve.TabIndex = 1;
             this.btnUtolsoMuve.Text = "Utolsó műve";
             this.btnUtolsoMuve.UseVisualStyleBackColor = true;
+            this.btnUtolsoMuve.Click += new System.EventHandler(this.btnUtolsoMuve_Click);
             // 
-            // label2
+            // lblUtolsoMuve
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(184, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Valaki";
+            this.lblUtolsoMuve.AutoSize = true;
+            this.lblUtolsoMuve.Location = new System.Drawing.Point(184, 53);
+            this.lblUtolsoMuve.Name = "lblUtolsoMuve";
+            this.lblUtolsoMuve.Size = new System.Drawing.Size(52, 20);
+            this.lblUtolsoMuve.TabIndex = 0;
+            this.lblUtolsoMuve.Text = "Valaki";
             // 
             // pictureBox1
             // 
@@ -84,15 +89,54 @@ namespace shakespeare
             this.btnNemKomediak.UseVisualStyleBackColor = true;
             this.btnNemKomediak.Click += new System.EventHandler(this.btnNemKomediak_Click);
             // 
+            // tbEvSzam
+            // 
+            this.tbEvSzam.Location = new System.Drawing.Point(495, 146);
+            this.tbEvSzam.Name = "tbEvSzam";
+            this.tbEvSzam.Size = new System.Drawing.Size(100, 26);
+            this.tbEvSzam.TabIndex = 3;
+            // 
+            // lblEvSzam
+            // 
+            this.lblEvSzam.AutoSize = true;
+            this.lblEvSzam.Location = new System.Drawing.Point(491, 99);
+            this.lblEvSzam.Name = "lblEvSzam";
+            this.lblEvSzam.Size = new System.Drawing.Size(69, 20);
+            this.lblEvSzam.TabIndex = 0;
+            this.lblEvSzam.Text = "Évszám:";
+            // 
+            // btnKereses
+            // 
+            this.btnKereses.Location = new System.Drawing.Point(625, 139);
+            this.btnKereses.Name = "btnKereses";
+            this.btnKereses.Size = new System.Drawing.Size(140, 40);
+            this.btnKereses.TabIndex = 1;
+            this.btnKereses.Text = "Keresés";
+            this.btnKereses.UseVisualStyleBackColor = true;
+            this.btnKereses.Click += new System.EventHandler(this.btnKereses_Click);
+            // 
+            // lblTalalat
+            // 
+            this.lblTalalat.AutoSize = true;
+            this.lblTalalat.Location = new System.Drawing.Point(491, 211);
+            this.lblTalalat.Name = "lblTalalat";
+            this.lblTalalat.Size = new System.Drawing.Size(56, 20);
+            this.lblTalalat.TabIndex = 0;
+            this.lblTalalat.Text = "Találat";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 537);
+            this.ClientSize = new System.Drawing.Size(786, 537);
+            this.Controls.Add(this.tbEvSzam);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnNemKomediak);
+            this.Controls.Add(this.btnKereses);
             this.Controls.Add(this.btnUtolsoMuve);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblTalalat);
+            this.Controls.Add(this.lblEvSzam);
+            this.Controls.Add(this.lblUtolsoMuve);
             this.Controls.Add(this.lblDarab);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -110,9 +154,13 @@ namespace shakespeare
 
         private System.Windows.Forms.Label lblDarab;
         private System.Windows.Forms.Button btnUtolsoMuve;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUtolsoMuve;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnNemKomediak;
+        private System.Windows.Forms.TextBox tbEvSzam;
+        private System.Windows.Forms.Label lblEvSzam;
+        private System.Windows.Forms.Button btnKereses;
+        private System.Windows.Forms.Label lblTalalat;
     }
 }
 
