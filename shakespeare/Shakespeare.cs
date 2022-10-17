@@ -24,12 +24,12 @@ namespace shakespeare
             private set { angolCim = value; }
         }
 
-        private int befejezes;
+        private int ev;
 
-        public int Befejezes
+        public int Ev
         {
-            get { return befejezes; }
-            private set { befejezes = value; }
+            get { return ev; }
+            private set { ev = value; }
         }
 
         private bool komedia;
@@ -40,11 +40,11 @@ namespace shakespeare
             private set { komedia = value; }
         }
 
-        public Shakespeare(string magyarCim, string angolCim, int befejezes, bool komedia)
+        public Shakespeare(string magyarCim, string angolCim, int ev, bool komedia)
         {
             MagyarCim = magyarCim;
             AngolCim = angolCim;
-            Befejezes = befejezes;
+            Ev = ev;
             Komedia = komedia;
         }
     }
