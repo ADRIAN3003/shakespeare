@@ -58,7 +58,7 @@ namespace shakespeare
             } 
             else
             {
-                MessageBox.Show("Nincsenek tragédiák és királydrámák ezért nem  írtam ki a dramak.txt-be");
+                MessageBox.Show("Nincs mit kiírni");
             }
 
         }
