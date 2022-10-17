@@ -42,18 +42,49 @@ namespace shakespeare
 
         private void btnNemKomediak_Click(object sender, EventArgs e)
         {
-            using (StreamWriter sw = new StreamWriter("dramak.txt"))
+            if (vanTragediaEsKiralyDrama())
             {
-                foreach (var shakespeare in shakespeares)
+                using (StreamWriter sw = new StreamWriter("dramak.txt"))
                 {
-                    if (!shakespeare.Komedia)
+                    foreach (var shakespeare in shakespeares)
                     {
-                        sw.WriteLine(shakespeare.AngolCim);
+                        if (!shakespeare.Komedia)
+                        {
+                            sw.WriteLine(shakespeare.AngolCim);
+                        }
                     }
                 }
+                MessageBox.Show("tragédiák és királydrámák angol címét kiírtam a dramak.txt-be");
+            } 
+            else
+            {
+                MessageBox.Show("Nincsenek tragédiák és királydrámák ezért nem  írtam ki a dramak.txt-be");
             }
 
-            MessageBox.Show("tragédiák és királydrámák angol címét kiírtam a dramak.txt-be");
+        }
+
+        private bool vanTragediaEsKiralyDrama()
+        {
+            //bool van = false;
+            //foreach (var shakespeare in shakespeares)
+            //{
+            //    if (!shakespeare.Komedia)
+            //    {
+            //        van = true;
+            //    }
+            //}
+            //return van;
+
+            //bool nincs = true;
+            //int i = 0;
+            //while (i < shakespeares.Count && nincs)
+            //{
+            //    nincs = shakespeares[i].Komedia;
+            //    i++;
+            //}
+            //return !nincs;
+
+            return shakespeares.Count(x => x.Komedia) == 0;
         }
 
         private void btnKereses_Click(object sender, EventArgs e)
