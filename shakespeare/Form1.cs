@@ -89,20 +89,37 @@ namespace shakespeare
 
         private void btnKereses_Click(object sender, EventArgs e)
         {
-            bool van = false;
-            foreach (var shakespeare in shakespeares)
+            try
             {
-                if (!van && shakespeare.Ev == Convert.ToInt32(tbEvSzam.Text))
+                int ev = Convert.ToInt32(tbEvSzam.Text);
+
+                if (ev < 1564 || ev > 1616)
                 {
-                    van = true;
-                    lblTalalat.Text = shakespeare.MagyarCim + "\n" + shakespeare.AngolCim + "\n" + (shakespeare.Komedia ? "Komédia" : "Dráma");
+                    throw new Exception("Ekkor nem is élt");
+                } 
+                else
+                {
+                    bool van = false;
+
+                    foreach (var shakespeare in shakespeares)
+                    {
+                        if (!van && shakespeare.Ev == ev)
+                        {
+                            van = true;
+                            lblTalalat.Text = shakespeare.MagyarCim + "\n" + shakespeare.AngolCim + "\n" + (shakespeare.Komedia ? "Komédia" : "Dráma");
+                        }
+                    }
+
+                    if (!van)
+                    {
+                        lblTalalat.Text = "Nem találtam megfelelő drámát";
+                        MessageBox.Show("Nem találtam megfelelő drámát");
+                    }
                 }
             }
-
-            if (!van)
+            catch (Exception ex)
             {
-                lblTalalat.Text = "Nem találtam megfelelő drámát";
-                MessageBox.Show("Nem találtam megfelelő drámát");
+                MessageBox.Show(ex.Message, "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
