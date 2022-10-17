@@ -37,5 +37,21 @@ namespace shakespeare
 
             lblDarab.Text = shakespeares.Count + " Shakespeare dráma adatait eltároltuk";
         }
+
+        private void btnNemKomediak_Click(object sender, EventArgs e)
+        {
+            using (StreamWriter sw = new StreamWriter("dramak.txt"))
+            {
+                foreach (var shakespeare in shakespeares)
+                {
+                    if (!shakespeare.Komedia)
+                    {
+                        sw.WriteLine(shakespeare.AngolCim);
+                    }
+                }
+            }
+
+            MessageBox.Show("Nem komédiák kiírva fájlba!");
+        }
     }
 }

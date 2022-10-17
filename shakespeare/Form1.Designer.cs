@@ -82,6 +82,7 @@ namespace shakespeare
             this.btnNemKomediak.TabIndex = 1;
             this.btnNemKomediak.Text = "Nem komédiák";
             this.btnNemKomediak.UseVisualStyleBackColor = true;
+            this.btnNemKomediak.Click += new System.EventHandler(this.btnNemKomediak_Click);
             // 
             // Form1
             // 
